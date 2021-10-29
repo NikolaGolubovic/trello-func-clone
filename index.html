@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
+    <title>Trello functions Clone</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="trello">
+        <div class="list" data-id="list-1">
+          <div class="list-title">Backlog</div>
+          <div class="items" draggable="true"></div>
+          <div class="label-container">
+            <p><i class="fas fa-plus"></i>Add Item</p>
+            <label for="">
+              <input type="text" />
+              <button class="btn-add">Save</button>
+            </label>
+          </div>
+        </div>
+        <div class="list" data-id="list-2">
+          <div class="list-title">In Progress</div>
+          <div class="items"></div>
+          <div class="label-container" draggable="false">
+            <p><i class="fas fa-plus"></i>Add Item</p>
+            <label for="">
+              <input type="text" />
+              <button class="btn-add">Save</button>
+            </label>
+          </div>
+        </div>
+        <div class="list" data-id="list-3">
+          <div class="list-title">Complete</div>
+          <div class="items"></div>
+          <div class="label-container" draggable="false">
+            <p><i class="fas fa-plus"></i>Add Item</p>
+            <label for="">
+              <input type="text" class="input" />
+              <button class="btn-add">Save</button>
+            </label>
+          </div>
+        </div>
+        <div class="list" draggable="true" data-id="list-4">
+          <div class="list-title">On Hold</div>
+          <div class="items"></div>
+          <div class="label-container" draggable="false">
+            <p><i class="fas fa-plus"></i>Add Item</p>
+            <label for="">
+              <input type="text" class="input" />
+              <button class="btn-add">Save</button>
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="js/script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+}
+
+@media (min-width: 280px) {
+    .container {
+        width: 100%;
+        min-height: 100vh;
+        background-image: linear-gradient( 135deg, #FFF6B7 10%, #F6416C 100%);
+    }
+    .trello {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 80%;
+        margin: 0 auto;
+    }
+    .list {
+        width: 90%;
+        background: rgb(128, 128, 128, 0.3);
+        padding: 20px;
+        margin: 0 auto;
+        margin: 10px 0;
+        border-radius: 5px;
+    }
+    .list-title {
+        background: #3C46FF;
+        padding: 5px 10px;
+        text-align: center;
+        border-radius: 3px;
+        color: white;
+    }
+    .items {
+        display: flex;
+        flex-direction: column;
+        min-width: 100px;
+        padding-bottom: 30px;
+    }
+    .item {
+        background: #937BF4;
+        color: white;
+        margin: 10px 0;
+        padding: 10px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    .label-container {
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+    }
+    .label-container p {
+        background: #67ECA3;
+        color: white;
+        cursor: pointer;
+        color: black;
+        padding: 5px 10px;
+        width: 100%;
+        border-radius: 5px;
+    }
+    .label-container p i {
+        margin: 0 5px;
+    }
+    .label-container p:hover {
+        color: white;
+    }
+    label {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+    }
+    .label-container.active label {
+        display: flex;
+    }
+    label input {
+        background: transparent;
+        padding: 5px;
+        border: 1px solid black;
+        margin: 10px 0;
+        color: black;
+        border-radius: 5px;
+        background: white;
+        outline: none;
+    }
+    label button {
+        background: #67ECA3;
+        border: none;
+        width: 50%;
+        margin: 5px 0;
+        padding: 10px 30px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    label button:active {
+        border-radius: 0px;
+        transform: scale(0.98);
+    }
+}
+
+@media (min-width: 768px) {
+    .trello {
+        flex-wrap: wrap;
+        flex-direction: row;
+    }
+    .list {
+        width: 45%;
+        background: rgb(128, 128, 128, 0.3);
+        padding: 20px;
+        margin: 0 auto;
+        margin: 10px;
+        border-radius: 5px;
+    }
+}
+
+@media (min-width: 1280px) {
+    .list {
+        width: 23%;
+        background: rgb(128, 128, 128, 0.3);
+        padding: 20px;
+        margin: 0 auto;
+        margin: 10px;
+        border-radius: 5px;
+    }
+}
