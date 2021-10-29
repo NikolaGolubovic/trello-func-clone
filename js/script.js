@@ -63,6 +63,7 @@ for (let i = 0; i < items.length; i++) {
 
   item.addEventListener("dragstart", function () {
     draggedItem = item;
+    console.log(draggedItem);
     setTimeout(function () {
       item.style.display = "none";
     }, 0);
@@ -92,6 +93,7 @@ for (let i = 0; i < items.length; i++) {
     });
 
     list.addEventListener("drop", function (e) {
+      const storage = JSON.parse(localStorage.getItem(storageName));
       this.children[1].append(draggedItem);
       const newElem = {
         value: draggedItem.textContent,
