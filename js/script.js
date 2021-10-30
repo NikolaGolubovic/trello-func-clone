@@ -43,13 +43,23 @@ btnsConfirm.forEach((btn) =>
     newItem.textContent = value;
     newItem.setAttribute("draggable", true);
     newItem.dataset.id = itemId;
+    newItem.ondragstart = function (e) {
+      draggedItem = e.target;
+      setTimeout(function () {
+        e.target.style.display = "none";
+      }, 0);
+    };
+    newItem.ondragend = function (e) {
+      console.log("jap");
+      setTimeout(function () {
+        e.target.style.display = "block";
+        draggedItem = null;
+      }, 0);
+    };
     this.parentElement.parentElement.parentElement.children[1].appendChild(
       newItem
     );
-    // cheat, na lokalnom serveru radi u tren oka, ne mogu da se izborim sa refresom querySelectora u global scopu
-    // u reactu bi to islo mnogo lakse sa state update
-    // pa se nadam da ce biti oprosten :)
-    location.reload();
+    // blah
   })
 );
 
@@ -63,7 +73,6 @@ for (let i = 0; i < items.length; i++) {
 
   item.addEventListener("dragstart", function () {
     draggedItem = item;
-    console.log(draggedItem);
     setTimeout(function () {
       item.style.display = "none";
     }, 0);
@@ -94,6 +103,7 @@ for (let i = 0; i < items.length; i++) {
 
     list.addEventListener("drop", function (e) {
       const storage = JSON.parse(localStorage.getItem(storageName));
+      console.log(draggedItem);
       this.children[1].append(draggedItem);
       const newElem = {
         value: draggedItem.textContent,
